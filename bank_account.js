@@ -4,18 +4,17 @@
 let saldo = 0;
 let inputSaldo;
 let keinginan;
+let n;
 
 //fungsi tambahSaldo
-function tambahSaldo(){
-    inputSaldo = window.prompt (`SALDO saat ini sebesar = ${saldo} \nMasukkan jumlah saldo yang ingin Anda tambah!`);
-    saldo += +inputSaldo;
-    alert(`SALDO terbaru Anda saat ini sebesar = ${saldo}`);
+function tambahSaldo(n){
+    saldo += n;
+    return alert(`SALDO terbaru Anda saat ini sebesar = ${saldo}`);
 }
 
 //fungsi kurangiSaldo
-function kurangiSaldo(){
-    inputSaldo = window.prompt (`SALDO saat ini sebesar = ${saldo} \nMasukkan jumlah saldo yang ingin anda kurangi!`);
-    saldo -= +inputSaldo;
+function kurangiSaldo(n){
+    saldo -= n;
     alert(`SALDO terbaru Anda saat ini sebesar = ${saldo}`);
 }
 
@@ -31,11 +30,13 @@ do {
     switch (keinginan) {
         case '1':
             // Tambah saldo
-            tambahSaldo();
+            inputSaldo = window.prompt (`SALDO saat ini sebesar = ${saldo} \nMasukkan jumlah saldo yang ingin Anda tambah!`);
+            saldo = tambahSaldo(inputSaldo);
             break;
         case '2':
             // Kurangi saldo
-            kurangiSaldo();
+            inputSaldo = window.prompt (`SALDO saat ini sebesar = ${saldo} \nMasukkan jumlah saldo yang ingin anda kurangi!`);
+            saldo = kurangiSaldo(inputSaldo);
             break;
         case '3':
             // Keluar dari perulangan
