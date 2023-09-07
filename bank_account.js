@@ -9,13 +9,13 @@ let n;
 //fungsi tambahSaldo
 function tambahSaldo(n){
     saldo += n;
-    return saldo;
+    alert(`SALDO terbaru Anda saat ini sebesar Rp. ${saldo}`);
 }
 
 //fungsi kurangiSaldo
 function kurangiSaldo(n){
     saldo -= n;
-    return saldo;
+    alert(`SALDO terbaru Anda saat ini sebesar Rp. ${saldo}`);
 }
 
 //BAGIAN utama
@@ -29,12 +29,12 @@ do {
         case '1':
             // Tambah saldo
             inputSaldo = Number(window.prompt ('Masukkan jumlah saldo yang ingin ditambah : '));
-            saldo = tambahSaldo(inputSaldo);
+            tambahSaldo(inputSaldo);
             break;
         case '2':
             // Kurangi saldo
             inputSaldo = Number(window.prompt ('Masukkan jumlah saldo yang ingin ditarik : '));
-            saldo = kurangiSaldo(inputSaldo);
+            kurangiSaldo(inputSaldo);
             break;
         default:
             alert('Pilihan tidak valid. Silakan coba lagi.');
