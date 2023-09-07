@@ -9,40 +9,35 @@ let n;
 //fungsi tambahSaldo
 function tambahSaldo(n){
     saldo += n;
-    return alert(`SALDO terbaru Anda saat ini sebesar = ${saldo}`);
+    return saldo;
 }
 
 //fungsi kurangiSaldo
 function kurangiSaldo(n){
     saldo -= n;
-    alert(`SALDO terbaru Anda saat ini sebesar = ${saldo}`);
+    return saldo;
 }
 
 //BAGIAN utama
 do {
-     keinginan = window.prompt (
-    `\t#INFORMASI SALDO SAAT INI# \n\t\t\t SALDO = ${saldo}\n
+     choice = window.prompt (`
     Pilih kondisi yang anda inginkan!
     1. Menambah saldo
-    2. Mengurangi saldo
-    3. Selesai`);
+    2. Mengurangi saldo`);
     
-    switch (keinginan) {
+    switch (choice) {
         case '1':
             // Tambah saldo
-            inputSaldo = window.prompt (`SALDO saat ini sebesar = ${saldo} \nMasukkan jumlah saldo yang ingin Anda tambah!`);
+            inputSaldo = Number(window.prompt ('Masukkan jumlah saldo yang ingin ditambah : '));
             saldo = tambahSaldo(inputSaldo);
             break;
         case '2':
             // Kurangi saldo
-            inputSaldo = window.prompt (`SALDO saat ini sebesar = ${saldo} \nMasukkan jumlah saldo yang ingin anda kurangi!`);
+            inputSaldo = Number(window.prompt ('Masukkan jumlah saldo yang ingin ditarik : '));
             saldo = kurangiSaldo(inputSaldo);
             break;
-        case '3':
-            // Keluar dari perulangan
-            alert (`Saldo terbaru Anda saat ini sebesar = ${saldo} \nSELESAI \nTERIMAKASIH`);
-            break;
         default:
-            alert('Pilihan Anda tidak valid. Silakan pilih 1, 2, atau 3.');
+            alert('Pilihan tidak valid. Silakan coba lagi.');
     }
-    }while (keinginan != '3')
+        pilihan = confirm ("Apakah ingin menambah/menarik saldo kembali?")
+    }while (pilihan)
