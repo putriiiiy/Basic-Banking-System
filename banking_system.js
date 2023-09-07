@@ -59,7 +59,7 @@ async function main() {
                   await account.withdraw(inputSaldo);
                   break;
               default:
-                  console.log('Pilihan tidak valid. Silakan coba lagi.');
+                  alert('Pilihan tidak valid. Silakan coba lagi.');
                   break;
           }
 
